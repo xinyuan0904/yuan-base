@@ -31,4 +31,22 @@
     <module>yuan-service</module>
     <module>yuan-web</module>
   </modules>
+  <properties>
+  	<druid.version>1.1.5</druid.version>
+  	<mysql.version>5.1.39</mysql.version>
+  </properties>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid</artifactId>
+		    <version>${druid.version}</version>
+  		</dependency>
+  		 <dependency>  
+        	<groupId>mysql</groupId>  
+	        <artifactId>mysql-connector-java</artifactId>  
+	        <version>${mysql.version}</version>  
+   		 </dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>

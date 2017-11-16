@@ -52,11 +52,11 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations"
 			value="classpath:com/yuan/db/dbmapper/mapper/xml/*.xml" />
-		<property name="typeAliasesPackage" value="com.mili.merchants.dbmapper.model" />
+		<property name="typeAliasesPackage" value="com.yuan.db.dbmapper.model" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.mili.merchants.dbmapper.mapper" />
+		<property name="basePackage" value="com.yuan.db.dbmapper.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 

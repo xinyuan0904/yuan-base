@@ -8,13 +8,20 @@
   <artifactId>yuan-web</artifactId>
   <packaging>war</packaging>
   <name>yuan-web</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.yuan</groupId>
+  		<artifactId>yuan-service</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  </dependencies>
   <build>  
         <plugins>  
             <plugin>  
                 <artifactId>maven-compiler-plugin</artifactId>  
                 <configuration>  
-                    <source>1.7</source>  
-                    <target>1.7</target>  
+                    <source>1.8</source>  
+                    <target>1.8</target>  
                 </configuration>  
             </plugin>  
             <plugin>  

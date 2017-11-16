@@ -22,7 +22,5 @@
 
 	<!-- 扫描包 配置项不但启用了对类包进行扫描以实施注释驱动Bean定义的功能，同时还启用了注释驱动自动注入的功能 （ 即还隐式地在内部注册了AutowiredAnnotationBeanPostProcessor和CommonAnnotationBeanPostProcessor）， 
 		因此当使用<context:component-scan />后，就可以将<context:annotation-config /> -->
-	<!-- <import resource="dubbo-provider.xml" />
-	<import resource="spring-framework-redis.xml" />
-	<import resource="spring-framework-mybatis.xml" /> -->
+	<import resource="spring-mybatis.xml" />
 </beans>

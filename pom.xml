@@ -18,12 +18,14 @@
     <module>yuan-web</module>
   </modules>
   <properties>
+  	<java.version>1.7</java.version>
   	<druid.version>1.1.5</druid.version>
   	<mysql.version>5.1.39</mysql.version>
   	<springframework.version>4.3.7.RELEASE</springframework.version>
   	<fastjson.version>1.2.40</fastjson.version>
   	<mybatis.version>3.4.1</mybatis.version>
   	<mybatis.spring.version>1.3.0</mybatis.spring.version>
+  	<log4j.version>1.2.17</log4j.version>
   </properties>
    <dependencies>
     <dependency>
@@ -71,6 +73,13 @@
 		<artifactId>fastjson</artifactId>
 		<version>${fastjson.version}</version>
 	</dependency>
+	<!-- log4j -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>${log4j.version}</version>
+	</dependency>
+	
   </dependencies>
   <dependencyManagement>
   	<dependencies>

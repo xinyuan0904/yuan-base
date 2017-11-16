@@ -11,7 +11,7 @@
 
  <!-- 引入配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-         <property name="location" value="classpath:jdbc.properties" />
+         <property name="location" value="classpath:jdbc_dev.properties" />
     </bean>
 	<bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
 		<property name="logViolation" value="true" />
@@ -20,7 +20,7 @@
 
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
-		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="driverClassName" value="${jdbc.driver}" />
 		<property name="name" value="${jdbc.name}" />
 		<property name="url" value="${jdbc.url}" />
 		<property name="username" value="${jdbc.username}" />
@@ -51,12 +51,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations"
-			value="classpath:com/yuan/db/dbmapper/mapper/xml/*.xml" />
-		<property name="typeAliasesPackage" value="com.yuan.db.dbmapper.model" />
+			value="classpath:com/yuan/db/mapper/*.xml" />
+		<!-- <property name="typeAliasesPackage" value="com.yuan.db.dbmapper.model" /> -->
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.yuan.db.dbmapper.mapper" />
+		<property name="basePackage" value="com.yuan.db.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 

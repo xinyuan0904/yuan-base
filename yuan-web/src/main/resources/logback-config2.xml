@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- <property name="LOG_PATH" value="../log/api_service" /> -->
+ 	<property name="LOG_PATH" value="D:/log" />
+
+	<!-- 日志记录器，日期滚动记录 -->
+	<appender name="FILE_FRAMEWORK"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/framework.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH}/framework-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>20MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyy-MM-dd HH:mm:ss,GMT+8}][%-5p][%t][%logger] -
+				%m%n%ex{8}
+			</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_DB_MAPPER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/dbmapper.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH}/dbmapper-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>20MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyy-MM-dd HH:mm:ss,GMT+8}][%-5p][%t][%logger{36}] -
+				%m%n%ex{8}
+			</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_INFO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/business.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH}/business-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>20MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyy-MM-dd HH:mm:ss,GMT+8}][%-5p][%t] - %m%n%ex{8}
+			</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="FILE_ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PATH}/errors.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH}/errors-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>20MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>[%d{yyy-MM-dd HH:mm:ss,GMT+8}][%-5p][%t] - %m%n%ex{8}
+			</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+	
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<Target>System.out</Target>
+		<encoder>
+			<pattern>[%d{yyy-MM-dd HH:mm:ss,GMT+8}][%-5p] - %m%n
+			</pattern>
+			<charset>utf-8</charset>
+		</encoder>
+	</appender>
+
+	<!-- 异步日志appender -->
+	<appender name="LOGQUEUE" class="ch.qos.logback.classic.AsyncAppender">
+		<discardingThreshold>0</discardingThreshold>
+		<queueSize>512</queueSize>
+		<appender-ref ref="FILE_DB_MAPPER" />
+		<appender-ref ref="FILE_FRAMEWORK" />
+	</appender>
+
+	<!-- framework 相关日志 -->
+	<logger name="org.springframework" additivity="false" level="ERROR">
+		<appender-ref ref="FILE_FRAMEWORK" />
+	</logger>
+
+	<!-- dbmapper 相关日志 -->
+	<logger name="org.mybatis" additivity="false" level="ERROR">
+		<appender-ref ref="FILE_DB_MAPPER" />
+	</logger>
+
+	<logger name="com.alibaba" additivity="false" level="ERROR">
+		<appender-ref ref="FILE_DB_MAPPER" />
+	</logger>
+
+	<!-- 运行日志 -->
+	<logger name="RUN" additivity="false" level="INFO">
+		<appender-ref ref="FILE_INFO" />
+	</logger>
+	<logger name="MONITOR" additivity="false" level="ERROR">
+		<appender-ref ref="FILE_ERROR" />
+	</logger>
+
+	<root level="DEBUG">
+		<appender-ref ref="stdout" />
+	</root>
+
+	<!-- LogLevel 管理 
+	<include resource="org/springframework/boot/logging/logback/base.xml" />-->
+	<jmxConfigurator />
+</configuration>

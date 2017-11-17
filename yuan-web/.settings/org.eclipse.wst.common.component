@@ -11,6 +11,9 @@
         <dependent-module archiveName="yuan-db-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/yuan-db/yuan-db">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="yuan-comm-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/yuan-comm/yuan-comm">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="/web"/>
         <property name="java-output-path" value="/yuan-web/target/classes"/>
     </wb-module>

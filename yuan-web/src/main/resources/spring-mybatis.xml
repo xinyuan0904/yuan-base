@@ -9,10 +9,6 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd ">
 
- <!-- 引入配置文件 -->
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-         <property name="location" value="classpath:jdbc_dev.properties" />
-    </bean>
 	<bean id="wall-filter" class="com.alibaba.druid.wall.WallFilter">
 		<property name="logViolation" value="true" />
 		<property name="throwException" value="false" />

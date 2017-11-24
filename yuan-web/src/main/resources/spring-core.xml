@@ -9,18 +9,19 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- <bean
+	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath:redis.properties</value>
-				<value>classpath:jdbc.properties</value>
+				<value>classpath:jdbc_dev.properties</value>
 			</list>
 		</property>
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
-	</bean> -->
+	</bean>
 
 	<!-- 扫描包 配置项不但启用了对类包进行扫描以实施注释驱动Bean定义的功能，同时还启用了注释驱动自动注入的功能 （ 即还隐式地在内部注册了AutowiredAnnotationBeanPostProcessor和CommonAnnotationBeanPostProcessor）， 
 		因此当使用<context:component-scan />后，就可以将<context:annotation-config /> -->
 	<import resource="spring-mybatis.xml" />
+	<import resource="spring-redis.xml" />
 </beans>

@@ -21,11 +21,11 @@
   		<artifactId>yuan-db</artifactId>
   		<version>${project.version}</version>
   	</dependency>
-	<dependency>
-　　　　　　<groupId>com.yuan</groupId>
-  		<artifactId>yuan-comm</artifactId>
-  		<version>${project.version}</version>
-　　　</dependency>
+  	<dependency>
+	    <groupId>com.yuan</groupId>
+	    <artifactId>yuan-comm</artifactId>
+	    <version>${project.version}</version>
+	</dependency>
 	<dependency>
 	    <groupId>redis.clients</groupId>
 	    <artifactId>jedis</artifactId>

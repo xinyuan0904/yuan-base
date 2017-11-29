@@ -16,6 +16,7 @@
     <module>yuan-db</module>
     <module>yuan-service</module>
     <module>yuan-web</module>
+ 
   </modules>
   <properties>
   	<java.version>1.7</java.version>
@@ -29,6 +30,9 @@
   	<logback.version>1.2.3</logback.version>
   	<redis.version>2.9.0</redis.version>
   	<spring.data.redis.version>1.8.3.RELEASE</spring.data.redis.version>
+  	<yuan.comm.version>0.0.1-SNAPSHOT</yuan.comm.version>
+	<yuan.db.version>0.0.1-SNAPSHOT</yuan.db.version>
+	<yuan.service.version>0.0.1-SNAPSHOT</yuan.service.version>
   </properties>
    <dependencies>
     <dependency>
@@ -94,10 +98,10 @@
 	    <version>${logback.version}</version>
 	</dependency> -->
 	<dependency>
-	　　　<groupId>ch.qos.logback</groupId>
-	　　　<artifactId>logback-classic</artifactId>
-	　　　<version>${logback.version}</version>
-　　　</dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>${logback.version}</version>
+	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>

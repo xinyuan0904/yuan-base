@@ -19,7 +19,7 @@
  
   </modules>
   <properties>
-  	<java.version>1.7</java.version>
+  	<java.version>1.8</java.version>
   	<druid.version>1.1.5</druid.version>
   	<mysql.version>5.1.39</mysql.version>
   	<springframework.version>4.3.7.RELEASE</springframework.version>
@@ -30,6 +30,8 @@
   	<logback.version>1.2.3</logback.version>
   	<redis.version>2.9.0</redis.version>
   	<spring.data.redis.version>1.8.3.RELEASE</spring.data.redis.version>
+  	<shiro.web.version>1.4.0</shiro.web.version>
+  	
   	<yuan.comm.version>0.0.1-SNAPSHOT</yuan.comm.version>
 	<yuan.db.version>0.0.1-SNAPSHOT</yuan.db.version>
 	<yuan.service.version>0.0.1-SNAPSHOT</yuan.service.version>
@@ -136,6 +138,11 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
 			<version>${spring.data.redis.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-web</artifactId>
+		    <version>${shiro.web.version}</version>
 		</dependency>
   	</dependencies>
   </dependencyManagement>

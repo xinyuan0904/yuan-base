@@ -14,6 +14,10 @@
   		<artifactId>yuan-service</artifactId>
   		<version>${project.version}</version>
   	</dependency>
+  	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-web</artifactId>
+	</dependency>
   </dependencies>
   <build>  
         <plugins>  

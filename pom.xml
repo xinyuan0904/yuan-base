@@ -31,6 +31,7 @@
   	<redis.version>2.9.0</redis.version>
   	<spring.data.redis.version>1.8.3.RELEASE</spring.data.redis.version>
   	<shiro.web.version>1.4.0</shiro.web.version>
+  	<activemq.all.version>5.10.2</activemq.all.version>
   	
   	<yuan.comm.version>0.0.1-SNAPSHOT</yuan.comm.version>
 	<yuan.db.version>0.0.1-SNAPSHOT</yuan.db.version>
@@ -143,6 +144,13 @@
 		    <groupId>org.apache.shiro</groupId>
 		    <artifactId>shiro-web</artifactId>
 		    <version>${shiro.web.version}</version>
+		</dependency>
+		
+		<!--activemq-all -->
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-all</artifactId>
+		    <version>${activemq.all.version}</version>
 		</dependency>
   	</dependencies>
   </dependencyManagement>

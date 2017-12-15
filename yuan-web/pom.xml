@@ -14,9 +14,9 @@
   		<artifactId>yuan-service</artifactId>
   		<version>${project.version}</version>
   	</dependency>
-  	<dependency>
+	<dependency>
 	    <groupId>org.apache.shiro</groupId>
-	    <artifactId>shiro-web</artifactId>
+	    <artifactId>shiro-spring</artifactId>
 	</dependency>
   </dependencies>
   <build>  

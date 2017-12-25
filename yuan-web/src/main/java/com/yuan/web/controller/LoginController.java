@@ -25,15 +25,20 @@ import com.alibaba.fastjson.JSONObject;
 @Controller
 public class LoginController {
 	
-	@RequestMapping("loginssss")
+	@RequestMapping("login")
+	public String login(){
+		return "login";
+	}
+	
+	@RequestMapping("toLogin")
 	@ResponseBody
-	public String login(HttpServletRequest request,
+	public String toLogin(HttpServletRequest request,
 			String username, String password){
 		JSONObject jo = new JSONObject();
 		UsernamePasswordToken token = new UsernamePasswordToken(username,
 				password);
 		// 记录该令牌
-		token.setRememberMe(false);
+		token.setRememberMe(true);
 		// subject权限对象
 		Subject subject = SecurityUtils.getSubject();
 		System.out.println(subject.isAuthenticated());

@@ -1,5 +1,6 @@
 package com.yuan.web.shiro;
 
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -9,6 +10,8 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+
+import com.yuan.db.pojo.User;
 
 public class UserRealm extends AuthorizingRealm{
 
@@ -24,6 +27,12 @@ public class UserRealm extends AuthorizingRealm{
 		String account = usernamePasswordToke.getUsername();
 		String pwd = String.valueOf(usernamePasswordToke.getPassword());
 		System.out.println("uname:"+account+"|pwd:"+pwd);
+		
+		User user = new User();
+		user.setName(account);
+		user.setPassword(pwd);
+		SecurityUtils.getSubject().getSession()
+		.setAttribute("shiro_session", user);
 		SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
 				account,pwd,this.getName()); //此处未进行密码加密处理
 		return authenticationInfo;

@@ -33,7 +33,7 @@
 	</servlet-mapping>
 	
 	
-	<!-- shiro -->
+	<!-- shiro 
 	<listener>
 		<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
 	</listener>
@@ -50,7 +50,7 @@
 	    <dispatcher>INCLUDE</dispatcher>
 	    <dispatcher>ERROR</dispatcher>
 	</filter-mapping>
-	
+	-->
 	<!-- slf4j 
 	<context-param>
 		<param-name>logbackConfigLocation</param-name>

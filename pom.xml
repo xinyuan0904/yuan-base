@@ -16,7 +16,7 @@
     <module>yuan-db</module>
     <module>yuan-service</module>
     <module>yuan-web</module>
- 
+    <module>yuan-quartz</module>
   </modules>
   <properties>
   	<java.version>1.8</java.version>
@@ -31,6 +31,7 @@
   	<redis.version>2.9.0</redis.version>
   	<spring.data.redis.version>1.8.3.RELEASE</spring.data.redis.version>
   	<shiro.web.version>1.4.0</shiro.web.version>
+  	<quartz.version>2.3.0</quartz.version>
   	
   	<yuan.comm.version>0.0.1-SNAPSHOT</yuan.comm.version>
 	<yuan.db.version>0.0.1-SNAPSHOT</yuan.db.version>
@@ -144,6 +145,18 @@
 		    <artifactId>shiro-web</artifactId>
 		    <version>${shiro.web.version}</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>${quartz.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz-jobs</artifactId>
+		    <version>${quartz.version}</version>
+		</dependency>
+		
   	</dependencies>
   </dependencyManagement>
 </project>
